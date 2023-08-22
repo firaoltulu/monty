@@ -20,9 +20,9 @@
  */
 typedef struct stack_s
 {
-    int n;
-    struct stack_s *prev;
-    struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -35,8 +35,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-    char *opcode;
-    void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /**
@@ -49,10 +49,10 @@ typedef struct instruction_s
  */
 typedef struct carry
 {
-    char *one;
-    FILE *two;
-    char *three;
-    int four;
+	char *one;
+	FILE *two;
+	char *three;
+	int four;
 
 } carry_t;
 extern carry_t con;
@@ -80,9 +80,9 @@ void Cutsom_queue(stack_t **one, unsigned int two);
 void Cutsom_stack(stack_t **one, unsigned int two);
 
 /*
-char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
-ssize_t getstdin(char **lineptr, int file);
-char *clean_line(char *content);
-*/
+   char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
+   ssize_t getstdin(char **lineptr, int file);
+   char *clean_line(char *content);
+   */
 
 #endif

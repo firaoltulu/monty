@@ -11,45 +11,45 @@
  */
 void Cutsom_push(stack_t **one, unsigned int two)
 {
-    int three;
-    int four = 0;
-    int five = 0;
+	int three;
+	int four = 0;
+	int five = 0;
 
-    if (con.one)
-    {
-        if (con.one[0] == '-')
-            four++;
-        for (; con.one[four] != '\0'; four++)
-        {
-            if (con.one[four] > 57 || con.one[four] < 48)
-                five = 1;
-        }
-        if (five == 1)
-        {
-            fprintf(stderr, "L%d: usage: push integer\n", two);
-            fclose(con.two);
-            free(con.three);
-            Cutsom_free_stack(*one);
-            exit(EXIT_FAILURE);
-        }
-    }
-    else
-    {
-        fprintf(stderr, "L%d: usage: push integer\n", two);
-        fclose(con.two);
-        free(con.three);
-        Cutsom_free_stack(*one);
-        exit(EXIT_FAILURE);
-    }
-    three = atoi(con.one);
-    if (con.four == 0)
-    {
-        Custom_addnode(one, three);
-    }
-    else
-    {
-        Custom_addqueue(one, three);
-    }
+	if (con.one)
+	{
+		if (con.one[0] == '-')
+			four++;
+		for (; con.one[four] != '\0'; four++)
+		{
+			if (con.one[four] > 57 || con.one[four] < 48)
+				five = 1;
+		}
+		if (five == 1)
+		{
+			fprintf(stderr, "L%d: usage: push integer\n", two);
+			fclose(con.two);
+			free(con.three);
+			Cutsom_free_stack(*one);
+			exit(EXIT_FAILURE);
+		}
+	}
+	else
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", two);
+		fclose(con.two);
+		free(con.three);
+		Cutsom_free_stack(*one);
+		exit(EXIT_FAILURE);
+	}
+	three = atoi(con.one);
+	if (con.four == 0)
+	{
+		Custom_addnode(one, three);
+	}
+	else
+	{
+		Custom_addqueue(one, three);
+	}
 }
 
 /**
@@ -64,22 +64,22 @@ void Cutsom_push(stack_t **one, unsigned int two)
  */
 void Custom_pall(stack_t **one, unsigned int two)
 {
-    stack_t *three;
-    (void)two;
+	stack_t *three;
+	(void)two;
 
-    three = *one;
-    if (three == NULL)
-    {
-        return;
-    }
-    else
-    {
-        while (three)
-        {
-            printf("%d\n", three->n);
-            three = three->next;
-        }
-    }
+	three = *one;
+	if (three == NULL)
+	{
+		return;
+	}
+	else
+	{
+		while (three)
+		{
+			printf("%d\n", three->n);
+			three = three->next;
+		}
+	}
 }
 
 /**
@@ -93,15 +93,15 @@ void Custom_pall(stack_t **one, unsigned int two)
  */
 void Cutsom_free_stack(stack_t *one)
 {
-    stack_t *two;
+	stack_t *two;
 
-    two = one;
-    while (one)
-    {
-        two = one->next;
-        free(one);
-        one = two;
-    }
+	two = one;
+	while (one)
+	{
+		two = one->next;
+		free(one);
+		one = two;
+	}
 }
 
 /**
@@ -117,24 +117,24 @@ void Cutsom_free_stack(stack_t *one)
 void Custom_addnode(stack_t **one, int two)
 {
 
-    stack_t *three, *four;
+	stack_t *three, *four;
 
-    four = *one;
-    three = malloc(sizeof(stack_t));
-    if (three == NULL)
-    {
-        printf("Error\n");
-        exit(0);
-    }
-    else
-    {
-        if (four)
-            four->prev = three;
-        three->n = two;
-        three->next = *one;
-        three->prev = NULL;
-        *one = three;
-    }
+	four = *one;
+	three = malloc(sizeof(stack_t));
+	if (three == NULL)
+	{
+		printf("Error\n");
+		exit(0);
+	}
+	else
+	{
+		if (four)
+			four->prev = three;
+		three->n = two;
+		three->next = *one;
+		three->prev = NULL;
+		*one = three;
+	}
 }
 
 /**
@@ -149,32 +149,32 @@ void Custom_addnode(stack_t **one, int two)
  */
 void Custom_addqueue(stack_t **one, int two)
 {
-    stack_t *three, *four;
+	stack_t *three, *four;
 
-    four = *one;
-    three = malloc(sizeof(stack_t));
-    if (three == NULL)
-    {
-        printf("Error\n");
-    }
-    else
-    {
-        three->n = two;
-        three->next = NULL;
-        if (four)
-        {
-            while (four->next)
-                four = four->next;
-        }
-        if (!four)
-        {
-            *one = three;
-            three->prev = NULL;
-        }
-        else
-        {
-            four->next = three;
-            three->prev = four;
-        }
-    }
+	four = *one;
+	three = malloc(sizeof(stack_t));
+	if (three == NULL)
+	{
+		printf("Error\n");
+	}
+	else
+	{
+		three->n = two;
+		three->next = NULL;
+		if (four)
+		{
+			while (four->next)
+				four = four->next;
+		}
+		if (!four)
+		{
+			*one = three;
+			three->prev = NULL;
+		}
+		else
+		{
+			four->next = three;
+			three->prev = four;
+		}
+	}
 }

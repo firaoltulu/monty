@@ -9,15 +9,15 @@
  */
 void Custom_print(stack_t **one, unsigned int two)
 {
-    if (*one == NULL)
-    {
-        fprintf(stderr, "L%u: can't pint, stack empty\n", two);
-        fclose(con.two);
-        free(con.three);
-        Cutsom_free_stack(*one);
-        exit(EXIT_FAILURE);
-    }
-    printf("%d\n", (*one)->n);
+	if (*one == NULL)
+	{
+		fprintf(stderr, "L%u: can't pint, stack empty\n", two);
+		fclose(con.two);
+		free(con.three);
+		Cutsom_free_stack(*one);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*one)->n);
 }
 
 /**
@@ -32,19 +32,19 @@ void Custom_print(stack_t **one, unsigned int two)
  */
 void Custom_pop(stack_t **one, unsigned int two)
 {
-    stack_t *three;
+	stack_t *three;
 
-    if (*one == NULL)
-    {
-        fprintf(stderr, "L%d: can't pop an empty stack\n", two);
-        fclose(con.two);
-        free(con.three);
-        Cutsom_free_stack(*one);
-        exit(EXIT_FAILURE);
-    }
-    three = *one;
-    *one = three->next;
-    free(three);
+	if (*one == NULL)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", two);
+		fclose(con.two);
+		free(con.three);
+		Cutsom_free_stack(*one);
+		exit(EXIT_FAILURE);
+	}
+	three = *one;
+	*one = three->next;
+	free(three);
 }
 
 /**
@@ -59,27 +59,27 @@ void Custom_pop(stack_t **one, unsigned int two)
  */
 void Custom_swap(stack_t **one, unsigned int two)
 {
-    stack_t *three;
-    int four = 0, five;
+	stack_t *three;
+	int four = 0, five;
 
-    three = *one;
-    while (three)
-    {
-        three = three->next;
-        four++;
-    }
-    if (four < 2)
-    {
-        fprintf(stderr, "L%d: can't swap, stack too short\n", two);
-        fclose(con.two);
-        free(con.three);
-        Cutsom_free_stack(*one);
-        exit(EXIT_FAILURE);
-    }
-    three = *one;
-    five = three->n;
-    three->n = three->next->n;
-    three->next->n = five;
+	three = *one;
+	while (three)
+	{
+		three = three->next;
+		four++;
+	}
+	if (four < 2)
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", two);
+		fclose(con.two);
+		free(con.three);
+		Cutsom_free_stack(*one);
+		exit(EXIT_FAILURE);
+	}
+	three = *one;
+	five = three->n;
+	three->n = three->next->n;
+	three->next->n = five;
 }
 
 /**
@@ -95,29 +95,29 @@ void Custom_swap(stack_t **one, unsigned int two)
  */
 void Custom_add(stack_t **one, unsigned int two)
 {
-    stack_t *three;
-    int four = 0;
-    int five;
+	stack_t *three;
+	int four = 0;
+	int five;
 
-    three = *one;
-    while (three)
-    {
-        three = three->next;
-        four++;
-    }
-    if (four < 2)
-    {
-        fprintf(stderr, "L%d: can't add, stack too short\n", two);
-        fclose(con.two);
-        free(con.three);
-        Cutsom_free_stack(*one);
-        exit(EXIT_FAILURE);
-    }
-    three = *one;
-    five = three->n + three->next->n;
-    three->next->n = five;
-    *one = three->next;
-    free(three);
+	three = *one;
+	while (three)
+	{
+		three = three->next;
+		four++;
+	}
+	if (four < 2)
+	{
+		fprintf(stderr, "L%d: can't add, stack too short\n", two);
+		fclose(con.two);
+		free(con.three);
+		Cutsom_free_stack(*one);
+		exit(EXIT_FAILURE);
+	}
+	three = *one;
+	five = three->n + three->next->n;
+	three->next->n = five;
+	*one = three->next;
+	free(three);
 }
 
 /**
@@ -128,6 +128,6 @@ void Custom_add(stack_t **one, unsigned int two)
  */
 void Custom_nop(stack_t **one, unsigned int two)
 {
-    (void)one;
-    (void)two;
+	(void)one;
+	(void)two;
 }
