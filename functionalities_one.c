@@ -123,8 +123,8 @@ void Custom_addnode(stack_t **one, int two)
 	three = malloc(sizeof(stack_t));
 	if (three == NULL)
 	{
-		printf("Error\n");
-		exit(0);
+		printf("Error: malloc failed\n");
+		exit(EXIT_FAILURE);
 	}
 	else
 	{
@@ -155,7 +155,8 @@ void Custom_addqueue(stack_t **one, int two)
 	three = malloc(sizeof(stack_t));
 	if (three == NULL)
 	{
-		printf("Error\n");
+		printf("Error: malloc failed\n");
+		exit(EXIT_FAILURE);
 	}
 	else
 	{
