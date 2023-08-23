@@ -78,10 +78,8 @@ int Custom_execute(char *one, stack_t **two, unsigned int three, FILE *four)
 	instruction_t seven[] = {
 		{"nop", Custom_nop}, {"sub", Custom_sub}, {"div", Custom_div},
 		{"push", Cutsom_push}, {"pall", Custom_pall}, {"pint", Custom_print},
-		{"mul", Cutsom_mul}, {"mod", Cutsom_mod}, {"pchar", Cutsom_pchar},
-		{"pop", Custom_pop}, {"swap", Custom_swap}, {"add", Custom_add},
-		{"pstr", Cutsom_pstr}, {"rotl", Cutsom_rotl}, {"rotr", Cutsom_rotr},
-		{"queue", Cutsom_queue}, {"stack", Cutsom_stack}, {NULL, NULL}};
+		{"mul", Cutsom_mul}, {"mod", Cutsom_mod}, {"pop", Custom_pop},
+		{"swap", Custom_swap}, {"add", Custom_add}, {NULL, NULL}};
 
 	unsigned int five = 0;
 	char *six;
