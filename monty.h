@@ -79,10 +79,4 @@ void Cutsom_rotr(stack_t **one, __attribute__((unused)) unsigned int two);
 void Cutsom_queue(stack_t **one, unsigned int two);
 void Cutsom_stack(stack_t **one, unsigned int two);
 
-/*
-   char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
-   ssize_t getstdin(char **lineptr, int file);
-   char *clean_line(char *content);
-   */
-
 #endif
