@@ -24,11 +24,14 @@ void Custom_sub(stack_t **one, unsigned int two)
 		Cutsom_free_stack(*one);
 		exit(EXIT_FAILURE);
 	}
-	three = *one;
-	four = three->next->n - three->n;
-	three->next->n = four;
-	*one = three->next;
-	free(three);
+	else
+	{
+		three = *one;
+		four = three->next->n - three->n;
+		three->next->n = four;
+		*one = three->next;
+		free(three);
+	}
 }
 
 /**
@@ -60,19 +63,25 @@ void Custom_div(stack_t **one, unsigned int two)
 		Cutsom_free_stack(*one);
 		exit(EXIT_FAILURE);
 	}
-	three = *one;
-	if (three->n == 0)
+	else
 	{
-		fprintf(stderr, "L%d: division by zero\n", two);
-		fclose(con.two);
-		free(con.three);
-		Cutsom_free_stack(*one);
-		exit(EXIT_FAILURE);
+		three = *one;
+		if (three->n == 0)
+		{
+			fprintf(stderr, "L%d: division by zero\n", two);
+			fclose(con.two);
+			free(con.three);
+			Cutsom_free_stack(*one);
+			exit(EXIT_FAILURE);
+		}
+		else
+		{
+			aux = three->next->n / three->n;
+			three->next->n = aux;
+			*one = three->next;
+			free(three);
+		}
 	}
-	aux = three->next->n / three->n;
-	three->next->n = aux;
-	*one = three->next;
-	free(three);
 }
 
 /**
@@ -103,11 +112,14 @@ void Cutsom_mul(stack_t **one, unsigned int two)
 		Cutsom_free_stack(*one);
 		exit(EXIT_FAILURE);
 	}
-	three = *one;
-	five = three->next->n * three->n;
-	three->next->n = five;
-	*one = three->next;
-	free(three);
+	else
+	{
+		three = *one;
+		five = three->next->n * three->n;
+		three->next->n = five;
+		*one = three->next;
+		free(three);
+	}
 }
 
 /**
@@ -140,19 +152,25 @@ void Cutsom_mod(stack_t **one, unsigned int two)
 		Cutsom_free_stack(*one);
 		exit(EXIT_FAILURE);
 	}
-	three = *one;
-	if (three->n == 0)
+	else
 	{
-		fprintf(stderr, "L%d: division by zero\n", two);
-		fclose(con.two);
-		free(con.three);
-		Cutsom_free_stack(*one);
-		exit(EXIT_FAILURE);
+		three = *one;
+		if (three->n == 0)
+		{
+			fprintf(stderr, "L%d: division by zero\n", two);
+			fclose(con.two);
+			free(con.three);
+			Cutsom_free_stack(*one);
+			exit(EXIT_FAILURE);
+		}
+		else
+		{
+			five = three->next->n % three->n;
+			three->next->n = five;
+			*one = three->next;
+			free(three);
+		}
 	}
-	five = three->next->n % three->n;
-	three->next->n = five;
-	*one = three->next;
-	free(three);
 }
 
 /**

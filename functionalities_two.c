@@ -17,7 +17,10 @@ void Custom_print(stack_t **one, unsigned int two)
 		Cutsom_free_stack(*one);
 		exit(EXIT_FAILURE);
 	}
-	printf("%d\n", (*one)->n);
+	else
+	{
+		printf("%d\n", (*one)->n);
+	}
 }
 
 /**
@@ -42,9 +45,12 @@ void Custom_pop(stack_t **one, unsigned int two)
 		Cutsom_free_stack(*one);
 		exit(EXIT_FAILURE);
 	}
-	three = *one;
-	*one = three->next;
-	free(three);
+	else
+	{
+		three = *one;
+		*one = three->next;
+		free(three);
+	}
 }
 
 /**
@@ -76,10 +82,13 @@ void Custom_swap(stack_t **one, unsigned int two)
 		Cutsom_free_stack(*one);
 		exit(EXIT_FAILURE);
 	}
-	three = *one;
-	five = three->n;
-	three->n = three->next->n;
-	three->next->n = five;
+	else
+	{
+		three = *one;
+		five = three->n;
+		three->n = three->next->n;
+		three->next->n = five;
+	}
 }
 
 /**
@@ -113,11 +122,14 @@ void Custom_add(stack_t **one, unsigned int two)
 		Cutsom_free_stack(*one);
 		exit(EXIT_FAILURE);
 	}
-	three = *one;
-	five = three->n + three->next->n;
-	three->next->n = five;
-	*one = three->next;
-	free(three);
+	else
+	{
+		three = *one;
+		five = three->n + three->next->n;
+		three->next->n = five;
+		*one = three->next;
+		free(three);
+	}
 }
 
 /**
